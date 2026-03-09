@@ -65,6 +65,43 @@ This will create a feature branch and populate a specification in `specs/`.
 | `/speckit.constitution` | Create or update the project constitution |
 | `/speckit.taskstoissues` | Convert tasks to GitHub Issues |
 
+## Interacting with GitHub Agents via GitHub Issues
+
+You can trigger Spec Kit workflows directly from GitHub Issues by assigning the issue to **@copilot** or by mentioning `@copilot` in an issue comment with a Spec Kit command.
+
+### Assigning an Issue to @copilot
+
+When you assign a GitHub Issue to `@copilot`, Copilot will automatically pick it up and begin working on it based on the issue description.
+
+### Mentioning @copilot in a Comment
+
+You can also trigger a specific Spec Kit agent by mentioning `@copilot` in an issue comment followed by the agent name and any relevant instructions:
+
+```
+@copilot /speckit.specify Add user authentication with email and password
+```
+
+```
+@copilot /speckit.plan
+```
+
+```
+@copilot /speckit.tasks
+```
+
+```
+@copilot /speckit.implement
+```
+
+### Example Workflow via Issues
+
+1. **Create a GitHub Issue** describing the feature or task you want to implement.
+2. **Assign the issue to @copilot**, or comment with `@copilot /speckit.specify <description>` to generate a feature spec.
+3. **Follow up** in the issue comments with `@copilot /speckit.plan`, then `@copilot /speckit.tasks`, and finally `@copilot /speckit.implement` to progress through the full SDD workflow.
+4. Copilot will open a pull request with the implementation and link it back to your issue.
+
+> **Tip:** You can use any of the commands from the [Available Commands](#available-commands) table above in an issue comment by prefixing them with `@copilot`.
+
 ## Learn More
 
 - [Spec Kit on GitHub](https://github.com/github/spec-kit)
